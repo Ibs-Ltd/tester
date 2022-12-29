@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:overScrollMode="never"
+    android:scrollbarThumbVertical="@null"
+    tools:context="com.ibs.hrmioneemployee.activities.MyLeaveBalanceActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="30dp">
+
+        <ImageView
+            android:id="@+id/backImage"
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/back_black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/myLeaveBalanceText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:text="My Leave Balance"
+            android:textColor="#11496e"
+            android:textSize="25sp"
+            android:translationZ="90dp"
+            app:layout_constraintStart_toStartOf="@id/backImage"
+            app:layout_constraintTop_toBottomOf="@id/backImage" />
+
+        <ProgressBar
+            android:id="@+id/leaveBalanceMainProgressBar"
+            android:layout_width="205dp"
+            android:layout_height="205dp"
+            android:layout_marginTop="15dp"
+            android:indeterminateOnly="false"
+            android:progress="65"
+            android:progressDrawable="@drawable/leave_balance_main_progress_bar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/myLeaveBalanceText" />
+
+        <TextView
+            android:id="@+id/leaveBalance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center_vertical"
+            android:src="@drawable/punch"
+            android:textColor="@color/black"
+            android:textSize="45sp"
+            app:layout_constraintBottom_toBottomOf="@+id/leaveBalanceMainProgressBar"
+            app:layout_constraintEnd_toEndOf="@+id/leaveBalanceMainProgressBar"
+            app:layout_constraintStart_toStartOf="@+id/leaveBalanceMainProgressBar"
+            app:layout_constraintTop_toTopOf="@+id/leaveBalanceMainProgressBar"
+            app:layout_constraintVertical_bias="0.4" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-5dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Leave Balance"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="@+id/leaveBalance"
+            app:layout_constraintStart_toStartOf="@+id/leaveBalance"
+            app:layout_constraintTop_toBottomOf="@+id/leaveBalance" />
+
+        <TextView
+            android:id="@+id/clickToApplyText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:text="Click to apply for leave"
+            android:textColor="#2daf2d"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/leaveBalanceMainProgressBar" />
+
+        <LinearLayout
+            android:id="@+id/llLeaves"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/clickToApplyText">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/total_leaves_circle" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_semi_bold"
+                        android:text="Total Leaves"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:id="@+id/totalLeaves"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/poppins_semi_bold"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="15dp"
+                android:background="@color/view_line_color" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/leaves_used_circle" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_semi_bold"
+                        android:text="Leaves Used"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:id="@+id/leavesUsed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_semi_bold"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/leaveBalanceRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/llLeaves" />
+
+
+        <LinearLayout
+            android:id="@+id/llApprovalsLeaves"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/leaveBalanceRecyclerView">
+
+            <LinearLayout
+                android:id="@+id/applied"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/screen18_view_all_bg"
+                android:orientation="vertical"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+
+                <TextView
+                    android:id="@+id/approvalsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Applied"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="25dp"
+                android:background="@color/view_line_color" />
+
+            <LinearLayout
+                android:id="@+id/leavesHistory"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+
+                <TextView
+                    android:id="@+id/leavesHistoryText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Leaves History"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/dottedView"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/custom_dotted_line"
+            app:layout_constraintTop_toBottomOf="@id/llApprovalsLeaves" />
+
+        <FrameLayout
+            android:id="@+id/myLeaveBalanceFragContainer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@id/dottedView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:gravity="center_horizontal"-->
+<!--            android:orientation="vertical"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/dottedView">-->
+
+<!--            <include-->
+<!--                android:id="@+id/appliedRecyclerView"-->
+<!--                layout="@layout/my_leave_balance_recycler_view" />-->
+
+<!--            <include-->
+<!--                android:id="@+id/leavesHistoryRecyclerView"-->
+<!--                layout="@layout/my_leave_balance_recycler_view" />-->
+
+<!--        </LinearLayout>-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

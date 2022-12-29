@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/llSingleItem"
+    android:layout_height="110dp"
+    android:orientation="vertical"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    android:layout_marginStart="25dp"
+    android:layout_marginEnd="25dp"
+    android:elevation="5dp"
+    android:background="@drawable/attendance_recycler_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/attendanceDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:text="08TH JULY, 2022"
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/officeHomeImage"
+            android:layout_width="20dp"
+            android:layout_height="20dp"/>
+
+        <LinearLayout
+            android:id="@+id/llAbsentHoliday"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:visibility="gone"
+            android:background="@drawable/absent_holiday_circle_bg">
+
+            <TextView
+                android:id="@+id/absentHoliday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13sp"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:textColor="@color/white"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="10dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="5dp"
+                android:layout_height="5dp"
+                android:layout_marginTop="2dp"
+                android:src="@drawable/in"/>
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginStart="2dp"
+                android:background="@drawable/check_in_circle"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Check-In"
+                    android:textSize="8sp"
+                    android:fontFamily="@font/poppins_semi_bold"/>
+
+                <TextView
+                    android:id="@+id/checkInTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="--:--"
+                    android:fontFamily="@font/poppins_semi_bold"
+                    android:textColor="@color/black"
+                    android:textSize="11.5sp"/>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="15dp"
+            android:background="@color/view_line_color"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="5dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="5dp"
+                android:layout_height="5dp"
+                android:layout_marginTop="2dp"
+                android:src="@drawable/out"/>
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginStart="2dp"
+                android:background="@drawable/check_out_circle"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Check-Out"
+                    android:textSize="8sp"
+                    android:fontFamily="@font/poppins_semi_bold"/>
+
+                <TextView
+                    android:id="@+id/checkOutTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="--:--"
+                    android:fontFamily="@font/poppins_semi_bold"
+                    android:textColor="@color/black"
+                    android:textSize="11.5sp"/>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="15dp"
+            android:background="@color/view_line_color"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="5dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="5dp"
+                android:layout_height="5dp"
+                android:layout_marginTop="2dp"
+                android:src="@drawable/hrs"/>
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginStart="2dp"
+                android:background="@drawable/working_hr_circle"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Working Hr's"
+                    android:textSize="8sp"
+                    android:fontFamily="@font/poppins_semi_bold"/>
+
+                <TextView
+                    android:id="@+id/workingHrs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="--:--"
+                    android:fontFamily="@font/poppins_semi_bold"
+                    android:textColor="#06aa01"
+                    android:textSize="11.5sp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

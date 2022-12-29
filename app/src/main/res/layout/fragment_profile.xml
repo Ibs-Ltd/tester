@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/llSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:baselineAligned="false"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <LinearLayout
+            android:id="@+id/llPersonal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:layout_weight="1"
+            android:background="@drawable/profile_personal_background"
+            android:gravity="center"
+            android:paddingStart="8dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="10dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/profile_personal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Personal"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llWork"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:layout_weight="1"
+            android:background="@drawable/profile_work_background"
+            android:gravity="center"
+            android:paddingStart="8dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="10dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/work_details" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Work"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llBank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:layout_weight="1"
+            android:background="@drawable/profile_bank_background"
+            android:gravity="center"
+            android:paddingStart="8dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="10dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/bank_details" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Bank"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <include
+        android:id="@+id/include_personal_layout"
+        layout="@layout/profile_personal_layout" />
+
+    <include
+        android:id="@+id/include_work_layout"
+        layout="@layout/profile_work_layout" />
+
+    <include
+        android:id="@+id/include_bank_layout"
+        layout="@layout/profile_bank_layout" />
+
+</LinearLayout>

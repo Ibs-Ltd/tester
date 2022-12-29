@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/backgroundBigTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:text="@string/track"
+            android:textColor="#eeeeee"
+            android:textSize="80sp"
+            android:layout_marginTop="-20dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/onboardingSmallTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:text="@string/attendance"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintTop_toTopOf="@id/backgroundBigTitle"
+            app:layout_constraintStart_toStartOf="@id/backgroundBigTitle"
+            app:layout_constraintEnd_toEndOf="@id/backgroundBigTitle"
+            app:layout_constraintBottom_toBottomOf="@id/backgroundBigTitle"/>
+
+        <ImageView
+            android:id="@+id/onboardingImage"
+            android:layout_width="match_parent"
+            android:layout_height="320dp"
+            android:padding="25dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="-15dp"
+            android:src="@drawable/tutorial_1_icon"
+            app:layout_constraintTop_toBottomOf="@id/backgroundBigTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/onboardingDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="20dp"
+            android:lineSpacingExtra="1.8dp"
+            android:text="Precisely track work timings such as total hours spent, remaining hours and break time which is calculated automatically as per the IN and OUT timing recorded by the biometric device."
+            android:textAlignment="center"
+            android:textColor="#0a0a0a"
+            android:textSize="12.8sp"
+            app:layout_constraintTop_toBottomOf="@id/onboardingImage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

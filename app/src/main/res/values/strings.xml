@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">HRmione Employee</string>
+    <string name="track">Track</string>
+    <string name="attendance">Attendance</string>
+    <string name="skip">Skip</string>
+    <string name="leave">Leave</string>
+    <string name="apply">Apply</string>
+    <string name="communication">Communication</string>
+    <string name="todo">TODO</string>
+    <string name="mail">Mail</string>
+    <string name="upload">Upload</string>
+    <string name="track2">Track</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="home">Home</string>
+    <string name="activity">Activity</string>
+    <string name="mail2">Mail</string>
+    <string name="onboardingDescription1">Precisely track work timings such as total hours spent, remaining hours and break time which is calculated automatically as per the IN and OUT timing recorded by the biometric device.</string>
+    <string name="onboardingDescription2">Easily apply for leaves, track their status, view old leave records and check leave the quoto for the year.</string>
+    <string name="onboardingDescription3">Communicate directly with HR and your team. Assign issues to HR by creating tickets and following up on then directly via mail.</string>
+    <string name="onboardingDescription4">Upload all your documents like identification proofs, certifications, relieving papers from previous organization etc. yourself with ease.</string>
+    <string name="onboardingDescription5">View payslip with the precise breakup, track pay history and raise salary concerns with HR (if any) immediately.</string>
+    <string name="otp_description">An 4 digit code has been sent to</string>
+
+    <string name="profile">Profile</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home_fragment">Home Fragment</string>
+    <string name="activity_fragment">Activity Fragment</string>
+    <string name="mail_fragment">Mail Fragment</string>
+    <string name="profile_fragment">Profile Fragment</string>
+    <string name="general_informations">General Informations</string>
+    <string name="edit">Edit</string>
+    <string name="contact_information">Contact information</string>
+    <string name="emp_200503">Emp.200503</string>
+    <string name="image_for_first_name">image for first name</string>
+    <string name="textview">TextView</string>
+    <string name="january_2022">January, 2022</string>
+    <string name="download_payslip_pdf">Download Payslip PDF</string>
+    <string name="logout">Logout</string>
+    <string name="compose">Compose</string>
+    <string name="_10_20_am">10:20 AM</string>
+    <string name="wednesday_july_22">Wednesday, July 22</string>
+
+    <string-array name="Font_Size">
+        <item>Font Size</item>
+        <item>2</item>
+        <item>4</item>
+        <item>6</item>
+        <item>8</item>
+        <item>10</item>
+        <item>12</item>
+        <item>14</item>
+        <item>16</item>
+        <item>18</item>
+        <item>20</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true"
+    android:overScrollMode="never"
+    android:scrollbarThumbVertical="@null"
+    tools:context="com.ibs.hrmioneemployee.activities.CreateLeaveRequestActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/llBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/backImage"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:src="@drawable/back_black" />
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/BackText"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginStart="10dp"-->
+            <!--                android:fontFamily="@font/poppins_semi_bold"-->
+            <!--                android:text="Back"-->
+            <!--                android:textColor="@color/black"-->
+            <!--                android:textSize="17sp" />-->
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/leaveManagementText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:text="Apply for Leave"
+            android:textColor="#11496e"
+            android:textSize="25sp"
+            android:translationZ="90dp"
+            app:layout_constraintStart_toStartOf="@id/llBack"
+            app:layout_constraintTop_toBottomOf="@id/llBack" />
+
+        <ImageView
+            android:id="@+id/applyForLeaveImage"
+            android:layout_width="wrap_content"
+            android:layout_height="250dp"
+            android:layout_marginTop="-30dp"
+            android:padding="40dp"
+            android:src="@drawable/apply_for_leave"
+            android:translationZ="90dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/leaveManagementText" />
+
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_marginTop="-15dp"
+            android:layout_marginEnd="-18dp"
+            android:src="@drawable/right_top_design"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/llChooseDate"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/custom_edittext"
+            android:elevation="5dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/applyForLeaveImage">
+
+            <TextView
+                android:id="@+id/tvChooseDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_weight="1"
+                android:background="@color/transparent"
+                android:fontFamily="@font/poppins_medium"
+                android:hint="Choose Date"
+                android:textColorHint="#505153"
+                android:textSize="13sp" />
+
+            <ImageView
+                android:id="@+id/chooseDateImage"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginEnd="20dp"
+                android:src="@drawable/calender" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llChooseLeaveType"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/custom_edittext"
+            android:elevation="5dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/llChooseDate">
+
+            <TextView
+                android:id="@+id/tvLeaveType"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_weight="1"
+                android:background="@color/transparent"
+                android:fontFamily="@font/poppins_medium"
+                android:hint="Choose Leave Type"
+                android:textColorHint="#505153"
+                android:textSize="13sp" />
+
+            <ImageView
+                android:id="@+id/chooseLeaveTypeImage"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginEnd="20dp"
+                android:src="@drawable/leave_type" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/et_reason"
+            android:layout_width="match_parent"
+            android:layout_height="125dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/custom_edittext"
+            android:elevation="5dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:paddingStart="20dp"
+            android:paddingTop="15dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/llChooseLeaveType">
+
+            <EditText
+                android:id="@+id/etReason"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:fontFamily="@font/poppins_medium"
+                android:hint="Reason"
+                android:inputType="text|textMultiLine"
+                android:textColorHint="#505153"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llSubmitForApproval"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="45dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/button_gradient_background"
+            android:elevation="5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:translationZ="90dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_reason">
+
+            <TextView
+                android:id="@+id/tvSubmitForApproval"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/transparent"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:gravity="center_vertical"
+                android:inputType="textEmailAddress"
+                android:text="SUBMIT FOR APPROVAL"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_marginStart="-40dp"
+                android:src="@drawable/next_arrow" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="-45dp"
+            android:layout_marginTop="-150dp"
+            android:src="@drawable/left_design"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/llSubmitForApproval"
+            app:layout_constraintVertical_bias="1" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

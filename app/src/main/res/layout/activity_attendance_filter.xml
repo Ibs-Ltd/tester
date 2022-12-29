@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true"
+    android:scrollbarThumbVertical="@null"
+    android:overScrollMode="never"
+    tools:context="com.ibs.hrmioneemployee.activities.AttendanceFilterActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/llBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/backImage"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:src="@drawable/back_black" />
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/BackText"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginStart="10dp"-->
+            <!--                android:fontFamily="@font/poppins_semi_bold"-->
+            <!--                android:text="Back"-->
+            <!--                android:textColor="@color/black"-->
+            <!--                android:textSize="17sp" />-->
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/attendanceFilterText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:text="Attendance Filter"
+            android:textColor="#11496e"
+            android:textSize="25sp"
+            android:translationZ="90dp"
+            app:layout_constraintStart_toStartOf="@id/llBack"
+            app:layout_constraintTop_toBottomOf="@id/llBack" />
+
+        <TextView
+            android:id="@+id/yearText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:text="Year"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@id/attendanceFilterText"
+            app:layout_constraintTop_toBottomOf="@id/attendanceFilterText" />
+
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_marginTop="-15dp"
+            android:layout_marginEnd="-18dp"
+            android:src="@drawable/right_top_design"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+
+            android:id="@+id/llYear"
+            android:layout_width="match_parent"
+            android:layout_height="105dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/attendance_recycler_background"
+            android:elevation="5dp"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="@id/yearText"
+            app:layout_constraintTop_toBottomOf="@+id/yearText"
+            tools:layout_editor_absoluteX="25dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:text="Years"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginTop="3dp"
+                        android:background="@drawable/check_in_circle" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="7dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/poppins_semi_bold"
+                            android:text="Year First"
+                            android:textSize="10.5sp" />
+
+                        <Spinner
+                            android:id="@+id/yearFirstSpinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_semi_bold"
+                            android:spinnerMode="dropdown"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <!--                        <ImageView-->
+                        <!--                            android:id="@+id/yearFirstFilterIcon"-->
+                        <!--                            android:layout_width="30dp"-->
+                        <!--                            android:layout_height="30dp"-->
+                        <!--                            android:layout_gravity="end"-->
+                        <!--                            android:layout_marginTop="-35dp"-->
+                        <!--                            android:layout_marginEnd="20dp"-->
+                        <!--                            android:padding="9dp"-->
+                        <!--                            android:src="@drawable/drop_down" />-->
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="-10dp"
+                    android:background="@color/view_line_color" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginTop="3dp"
+                        android:background="@drawable/check_out_circle" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="7dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/poppins_semi_bold"
+                            android:text="Year Last"
+                            android:textSize="10.5sp" />
+
+                        <Spinner
+                            android:id="@+id/yearLastSpinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_semi_bold"
+                            android:spinnerMode="dropdown"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <!--                        <ImageView-->
+                        <!--                            android:id="@+id/yearLastFilterIcon"-->
+                        <!--                            android:layout_width="30dp"-->
+                        <!--                            android:layout_height="30dp"-->
+                        <!--                            android:layout_gravity="end"-->
+                        <!--                            android:layout_marginTop="-35dp"-->
+                        <!--                            android:layout_marginEnd="5dp"-->
+                        <!--                            android:padding="9dp"-->
+                        <!--                            android:src="@drawable/drop_down" />-->
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/monthText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:text="Month"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@id/yearText"
+            app:layout_constraintTop_toBottomOf="@id/llYear" />
+
+        <LinearLayout
+
+            android:id="@+id/llMonth"
+            android:layout_width="match_parent"
+            android:layout_height="105dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/attendance_recycler_background"
+            android:elevation="5dp"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="@id/llYear"
+            app:layout_constraintTop_toBottomOf="@+id/monthText"
+            tools:layout_editor_absoluteX="25dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:text="Months"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginTop="3dp"
+                        android:background="@drawable/check_in_circle" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="7dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_semi_bold"
+                            android:text="Month First"
+                            android:textSize="10.5sp" />
+
+                        <Spinner
+                            android:id="@+id/monthFirstSpinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="-10dp"
+                            android:fontFamily="@font/poppins_semi_bold"
+                            android:spinnerMode="dropdown"
+                            android:text="January"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <!--                        <ImageView-->
+                        <!--                            android:id="@+id/monthFirstFilterIcon"-->
+                        <!--                            android:layout_width="30dp"-->
+                        <!--                            android:layout_height="30dp"-->
+                        <!--                            android:layout_gravity="end"-->
+                        <!--                            android:layout_marginTop="-35dp"-->
+                        <!--                            android:layout_marginEnd="10dp"-->
+                        <!--                            android:padding="9dp"-->
+                        <!--                            android:src="@drawable/drop_down" />-->
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="-10dp"
+                    android:background="@color/view_line_color" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginTop="3dp"
+                        android:background="@drawable/check_out_circle" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="7dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_semi_bold"
+                            android:text="Month Last"
+                            android:textSize="10.5sp" />
+
+                        <Spinner
+                            android:id="@+id/monthLastSpinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="-10dp"
+                            android:fontFamily="@font/poppins_semi_bold"
+                            android:spinnerMode="dropdown"
+                            android:text="December"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <!--                        <ImageView-->
+                        <!--                            android:id="@+id/monthLastFilterIcon"-->
+                        <!--                            android:layout_width="30dp"-->
+                        <!--                            android:layout_height="30dp"-->
+                        <!--                            android:layout_gravity="end"-->
+                        <!--                            android:layout_marginTop="-35dp"-->
+                        <!--                            android:layout_marginEnd="5dp"-->
+                        <!--                            android:padding="9dp"-->
+                        <!--                            android:src="@drawable/drop_down" />-->
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/dateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:text="Date"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@id/monthText"
+            app:layout_constraintTop_toBottomOf="@id/llMonth" />
+
+        <LinearLayout
+
+            android:id="@+id/llDate"
+            android:layout_width="match_parent"
+            android:layout_height="105dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/attendance_recycler_background"
+            android:elevation="5dp"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="@id/llMonth"
+            app:layout_constraintTop_toBottomOf="@+id/dateText"
+            tools:layout_editor_absoluteX="25dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:text="Dates"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginTop="3dp"
+                        android:background="@drawable/check_in_circle" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="7dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/poppins_semi_bold"
+                            android:text="Date First"
+                            android:textSize="10.5sp" />
+
+                        <Spinner
+                            android:id="@+id/dateFirstSpinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_semi_bold"
+                            android:spinnerMode="dropdown"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <!--                        <ImageView-->
+                        <!--                            android:id="@+id/dateFirstFilterIcon"-->
+                        <!--                            android:layout_width="30dp"-->
+                        <!--                            android:layout_height="30dp"-->
+                        <!--                            android:layout_gravity="end"-->
+                        <!--                            android:layout_marginTop="-35dp"-->
+                        <!--                            android:layout_marginEnd="10dp"-->
+                        <!--                            android:padding="9dp"-->
+                        <!--                            android:src="@drawable/drop_down" />-->
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="-10dp"
+                    android:background="@color/view_line_color" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginTop="3dp"
+                        android:background="@drawable/check_out_circle" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="7dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/poppins_semi_bold"
+                            android:text="Date Last"
+                            android:textSize="10.5sp" />
+
+                        <Spinner
+                            android:id="@+id/dateLastSpinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_semi_bold"
+                            android:spinnerMode="dropdown"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <!--                        <ImageView-->
+                        <!--                            android:id="@+id/dateLastFilterIcon"-->
+                        <!--                            android:layout_width="30dp"-->
+                        <!--                            android:layout_height="30dp"-->
+                        <!--                            android:layout_gravity="end"-->
+                        <!--                            android:layout_marginTop="-35dp"-->
+                        <!--                            android:layout_marginEnd="5dp"-->
+                        <!--                            android:padding="9dp"-->
+                        <!--                            android:src="@drawable/drop_down" />-->
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llApplyForFilter"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="45dp"
+            android:layout_marginBottom="25dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/button_gradient_background"
+            android:elevation="8dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:translationZ="90dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/llDate">
+
+            <TextView
+                android:id="@+id/tvApplyForFilter"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/transparent"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:gravity="center_vertical"
+                android:inputType="textEmailAddress"
+                android:text="Apply For Filter"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="17sp" />
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_marginStart="-40dp"
+                android:src="@drawable/next_arrow" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="-48dp"
+            android:src="@drawable/left_design"
+            android:layout_marginTop="-120dp"
+            app:layout_constraintTop_toBottomOf="@+id/llApplyForFilter"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+<!--        <ImageView-->
+<!--            android:layout_width="300dp"-->
+<!--            android:layout_height="200dp"-->
+<!--            android:layout_marginStart="-50dp"-->
+<!--            android:src="@drawable/left_design"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintVertical_bias="1" />-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

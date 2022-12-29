@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/llBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:src="@drawable/back_black" />
+
+        <!--        <TextView-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginStart="8dp"-->
+        <!--            android:fontFamily="@font/poppins_medium"-->
+        <!--            android:text="Back"-->
+        <!--            android:textColor="@color/black"-->
+        <!--            android:textSize="17sp" />-->
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/fullName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:text="Hi John Dew,"
+        android:textColor="#042943"
+        android:textSize="27sp"
+        app:layout_constraintStart_toStartOf="@id/llBack"
+        app:layout_constraintTop_toBottomOf="@id/llBack" />
+
+    <TextView
+        android:id="@+id/text3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-8dp"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:text="Welcome!"
+        android:textColor="#19628f"
+        android:textSize="27dp"
+        app:layout_constraintStart_toStartOf="@id/fullName"
+        app:layout_constraintTop_toBottomOf="@id/fullName" />
+
+    <ImageView
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="5dp"
+        android:src="@drawable/emoji"
+        app:layout_constraintBottom_toBottomOf="@id/text3"
+        app:layout_constraintStart_toEndOf="@id/text3"
+        app:layout_constraintTop_toTopOf="@id/text3" />
+
+    <LinearLayout
+        android:id="@+id/llMonthlySummary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@id/text3"
+        app:layout_constraintTop_toBottomOf="@id/text3">
+
+        <TextView
+            android:id="@+id/monthlySummary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Monthly Summary"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+
+        <ImageView
+            android:id="@+id/filter"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:padding="5dp"
+            android:src="@drawable/filter" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/monthYear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:text="June, 2022"
+        android:textSize="11sp"
+        app:layout_constraintStart_toStartOf="@id/text3"
+        app:layout_constraintTop_toBottomOf="@id/llMonthlySummary" />
+
+
+    <TextView
+        android:id="@+id/presentBg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/attendance_present_bg"
+        app:layout_constraintEnd_toStartOf="@+id/absentBg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/monthYear">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/textPresent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Present"
+        android:textColor="#33a33a"
+        android:textSize="11sp"
+        app:layout_constraintStart_toStartOf="@id/presentBg"
+        app:layout_constraintTop_toTopOf="@id/presentBg" />
+
+    <ImageView
+        android:id="@+id/presentImage"
+        android:layout_width="13dp"
+        android:layout_height="13dp"
+        android:layout_marginStart="4dp"
+        android:src="@drawable/present"
+        app:layout_constraintBottom_toBottomOf="@id/textPresent"
+        app:layout_constraintStart_toEndOf="@id/textPresent"
+        app:layout_constraintTop_toTopOf="@id/textPresent"
+        tools:layout_editor_absoluteX="83dp"
+        tools:layout_editor_absoluteY="265dp" />
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/more_horiz_green"
+        app:layout_constraintBottom_toBottomOf="@id/presentImage"
+        app:layout_constraintEnd_toEndOf="@id/presentBg"
+        app:layout_constraintTop_toTopOf="@id/presentImage" />
+
+    <ProgressBar
+        android:id="@+id/present_progress_bar"
+        style="@style/CircularPresentProgressBar"
+        android:layout_width="105dp"
+        android:layout_height="105dp"
+        app:layout_constraintBottom_toBottomOf="@id/presentBg"
+        app:layout_constraintLeft_toLeftOf="@id/presentBg"
+        app:layout_constraintRight_toRightOf="@id/presentBg"
+        app:layout_constraintTop_toTopOf="@id/presentBg"/>
+
+    <TextView
+        android:id="@+id/presentDays"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:textColor="#32a339"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="@id/present_progress_bar"
+        app:layout_constraintEnd_toEndOf="@id/present_progress_bar"
+        app:layout_constraintStart_toStartOf="@id/present_progress_bar"
+        app:layout_constraintTop_toTopOf="@id/present_progress_bar" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:text="Days"
+        android:textColor="#32a339"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/presentBg"
+        app:layout_constraintEnd_toEndOf="@+id/present_progress_bar"
+        app:layout_constraintStart_toStartOf="@+id/present_progress_bar"
+        app:layout_constraintTop_toBottomOf="@+id/present_progress_bar" />
+
+    <TextView
+        android:id="@+id/absentBg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/attendance_absent_bg"
+        app:layout_constraintBottom_toBottomOf="@id/presentBg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/presentBg"
+        app:layout_constraintTop_toTopOf="@id/presentBg" />
+
+
+    <TextView
+        android:id="@+id/textAbsent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Absent"
+        android:textColor="#ff7f84"
+        android:textSize="11sp"
+        app:layout_constraintStart_toStartOf="@id/absentBg"
+        app:layout_constraintTop_toTopOf="@id/absentBg"
+        tools:layout_editor_absoluteX="252dp"
+        tools:layout_editor_absoluteY="275dp" />
+
+    <ImageView
+        android:id="@+id/absentImage"
+        android:layout_width="13dp"
+        android:layout_height="13dp"
+        android:layout_marginStart="4dp"
+        android:src="@drawable/present"
+        app:layout_constraintBottom_toBottomOf="@id/textAbsent"
+        app:layout_constraintStart_toEndOf="@id/textAbsent"
+        app:layout_constraintTop_toTopOf="@id/textAbsent"
+        tools:layout_editor_absoluteX="295dp"
+        tools:layout_editor_absoluteY="275dp" />
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/more_horiz_orange"
+        app:layout_constraintBottom_toBottomOf="@id/absentImage"
+        app:layout_constraintEnd_toEndOf="@id/absentBg"
+        app:layout_constraintTop_toTopOf="@id/absentImage" />
+
+    <ProgressBar
+        android:id="@+id/absent_progress_bar"
+        style="@style/CircularAbsentProgressBar"
+        android:layout_width="105dp"
+        android:layout_height="105dp"
+        app:layout_constraintBottom_toBottomOf="@id/absentBg"
+        app:layout_constraintLeft_toLeftOf="@id/absentBg"
+        app:layout_constraintRight_toRightOf="@id/absentBg"
+        app:layout_constraintTop_toTopOf="@id/absentBg"/>
+
+    <TextView
+        android:id="@+id/absentDays"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:textColor="#ff8182"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="@id/absent_progress_bar"
+        app:layout_constraintEnd_toEndOf="@id/absent_progress_bar"
+        app:layout_constraintStart_toStartOf="@id/absent_progress_bar"
+        app:layout_constraintTop_toTopOf="@id/absent_progress_bar" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:text="Days"
+        android:textColor="#ff8182"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/absentBg"
+        app:layout_constraintEnd_toEndOf="@+id/absent_progress_bar"
+        app:layout_constraintStart_toStartOf="@+id/absent_progress_bar"
+        app:layout_constraintTop_toBottomOf="@+id/absent_progress_bar" />
+
+    <TextView
+        android:id="@+id/dateByDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:text="Date By Date"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@id/presentBg"
+        app:layout_constraintTop_toBottomOf="@id/presentBg"/>
+
+    <TextView
+        android:id="@+id/viewAll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="25dp"
+        android:background="@drawable/screen18_view_all_bg"
+        android:fontFamily="@font/poppins_medium"
+        android:paddingStart="8dp"
+        android:paddingTop="5dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="5dp"
+        android:text="View All"
+        android:textColor="@color/white"
+        android:textSize="7.5sp"
+        app:layout_constraintTop_toTopOf="@id/dateByDate"
+        app:layout_constraintBottom_toBottomOf="@id/dateByDate"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/attendance_date_by_date_bg"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="@id/viewAll"
+        app:layout_constraintStart_toStartOf="@id/dateByDate"
+        app:layout_constraintTop_toBottomOf="@id/dateByDate"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+            tools:listitem="@layout/attendance_date_by_date_recycler_single_item"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

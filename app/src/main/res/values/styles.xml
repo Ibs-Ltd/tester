@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CountryCodePicker">
+        <item name="fontFamily">@font/poppins_medium</item>
+    </style>
+
+    <style name="loadingDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowBackground">@drawable/loading_background_dialog</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
+    <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <!-- <item name="background">@color/transparent</item>-->
+        <item name="colorAccent">@color/ibs_app_theme</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="SignatureDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowBackground">@drawable/rounded_corner_signature_dialog_bg</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
+    <style name="DeviceIdDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowBackground">@drawable/rounded_corner_signature_dialog_bg</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
+</resources>

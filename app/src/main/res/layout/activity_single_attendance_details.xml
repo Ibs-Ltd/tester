@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.ibs.hrmioneemployee.activities.SingleAttendanceDetailsActivity">
+
+    <View
+        android:id="@+id/mainView"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:background="@drawable/custom_dashboard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/llBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/backImage"
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:src="@drawable/back_white" />
+
+        <!--                <TextView-->
+        <!--                    android:id="@+id/BackText"-->
+        <!--                    android:layout_width="wrap_content"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:layout_marginStart="10dp"-->
+        <!--                    android:fontFamily="@font/poppins_medium"-->
+        <!--                    android:text="Back"-->
+        <!--                    android:textColor="@color/white"-->
+        <!--                    android:textSize="17sp" />-->
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/attendanceText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:text="Attendance"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="@+id/llBack"
+        app:layout_constraintTop_toBottomOf="@+id/llBack" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="8dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/attendanceText">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingBottom="20dp">
+
+            <LinearLayout
+                android:id="@+id/llDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/calender" />
+
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="10 - August - 2022"
+                    android:textColor="@color/black"
+                    android:textSize="17sp" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/dottedLine1"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/custom_dotted_line"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/llDate" />
+
+            <ProgressBar
+                android:id="@+id/leaveBalanceMainProgressBar"
+                android:layout_width="195dp"
+                android:layout_height="195dp"
+                android:layout_marginTop="10dp"
+                android:indeterminateOnly="false"
+                android:progressDrawable="@drawable/leave_balance_main_progress_bar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dottedLine1" />
+
+            <TextView
+                android:id="@+id/shiftTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center_vertical"
+                android:src="@drawable/punch"
+                android:text="09:00"
+                android:textColor="@color/black"
+                android:textSize="28sp"
+                app:layout_constraintBottom_toBottomOf="@+id/leaveBalanceMainProgressBar"
+                app:layout_constraintEnd_toEndOf="@+id/leaveBalanceMainProgressBar"
+                app:layout_constraintStart_toStartOf="@+id/leaveBalanceMainProgressBar"
+                app:layout_constraintTop_toTopOf="@+id/leaveBalanceMainProgressBar"
+                app:layout_constraintVertical_bias="0.45" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:text="Shift Time"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="@+id/shiftTime"
+                app:layout_constraintStart_toStartOf="@+id/shiftTime"
+                app:layout_constraintTop_toBottomOf="@+id/shiftTime" />
+
+            <TextView
+                android:id="@+id/completeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:text="Complete"
+                android:textColor="#2daf2d"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@id/leaveBalanceMainProgressBar"
+                app:layout_constraintStart_toStartOf="@id/leaveBalanceMainProgressBar"
+                app:layout_constraintTop_toBottomOf="@id/leaveBalanceMainProgressBar" />
+
+            <LinearLayout
+                android:id="@+id/llCheckInCheckOut"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/completeText">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/in" />
+
+                    <View
+                        android:layout_width="13dp"
+                        android:layout_height="13dp"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginTop="3dp"
+                        android:background="@drawable/check_in_circle" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_semi_bold"
+                            android:text="Check-In"
+                            android:textSize="11sp" />
+
+                        <TextView
+                            android:id="@+id/checkInTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_semi_bold"
+                            android:text="09:58:45AM"
+                            android:textColor="@color/black"
+                            android:textSize="15sp" />
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="25dp"
+                    android:background="@color/view_line_color" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/out" />
+
+                    <View
+                        android:layout_width="13dp"
+                        android:layout_height="13dp"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginTop="3dp"
+                        android:background="@drawable/check_out_circle" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_semi_bold"
+                            android:text="Check-Out"
+                            android:textSize="11sp" />
+
+                        <TextView
+                            android:id="@+id/checkOutTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_semi_bold"
+                            android:text="07:10:15PM"
+                            android:textColor="@color/black"
+                            android:textSize="15sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--            <View-->
+            <!--                android:id="@+id/dottedLine2"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="5dp"-->
+            <!--                android:layout_marginTop="20dp"-->
+            <!--                android:background="@drawable/custom_dotted_line"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toBottomOf="@id/llCheckInCheckOut" />-->
+
+            <!--            <LinearLayout-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginStart="15dp"-->
+            <!--                android:layout_marginTop="20dp"-->
+            <!--                android:layout_marginEnd="10dp"-->
+            <!--                android:layout_marginBottom="20dp"-->
+            <!--                android:gravity="center_vertical"-->
+            <!--                android:orientation="horizontal"-->
+            <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toBottomOf="@id/dottedLine2">-->
+
+            <!--                <LinearLayout-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_weight="1"-->
+            <!--                    android:orientation="horizontal">-->
+
+            <!--                    <View-->
+            <!--                        android:layout_width="13dp"-->
+            <!--                        android:layout_height="13dp"-->
+            <!--                        android:layout_marginStart="7dp"-->
+            <!--                        android:layout_marginTop="3dp"-->
+            <!--                        android:background="@drawable/working_hr_circle" />-->
+
+            <!--                    <LinearLayout-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginStart="5dp"-->
+            <!--                        android:orientation="vertical">-->
+
+            <!--                        <TextView-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:fontFamily="@font/poppins_semi_bold"-->
+            <!--                            android:text="Break"-->
+            <!--                            android:textSize="11sp" />-->
+
+            <!--                        <TextView-->
+            <!--                            android:id="@+id/breakTime"-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:fontFamily="@font/poppins_semi_bold"-->
+            <!--                            android:text="15 Min"-->
+            <!--                            android:textColor="@color/black"-->
+            <!--                            android:textSize="16sp" />-->
+
+            <!--                    </LinearLayout>-->
+
+            <!--                </LinearLayout>-->
+
+            <!--                <View-->
+            <!--                    android:layout_width="1dp"-->
+            <!--                    android:layout_height="25dp"-->
+            <!--                    android:layout_marginStart="15dp"-->
+            <!--                    android:background="@color/view_line_color" />-->
+
+            <!--                <LinearLayout-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_marginStart="15dp"-->
+            <!--                    android:layout_weight="1"-->
+            <!--                    android:orientation="horizontal">-->
+
+            <!--                    <View-->
+            <!--                        android:layout_width="13dp"-->
+            <!--                        android:layout_height="13dp"-->
+            <!--                        android:layout_marginStart="7dp"-->
+            <!--                        android:layout_marginTop="3dp"-->
+            <!--                        android:background="@drawable/overtime_circle" />-->
+
+            <!--                    <LinearLayout-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginStart="5dp"-->
+            <!--                        android:orientation="vertical">-->
+
+            <!--                        <TextView-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:fontFamily="@font/poppins_semi_bold"-->
+            <!--                            android:text="Overtime"-->
+            <!--                            android:textSize="11sp" />-->
+
+            <!--                        <TextView-->
+            <!--                            android:id="@+id/overTime"-->
+            <!--                            android:layout_width="wrap_content"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:fontFamily="@font/poppins_semi_bold"-->
+            <!--                            android:text="38:35"-->
+            <!--                            android:textColor="@color/black"-->
+            <!--                            android:textSize="16sp" />-->
+
+            <!--                    </LinearLayout>-->
+
+            <!--                </LinearLayout>-->
+
+            <!--            </LinearLayout>-->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

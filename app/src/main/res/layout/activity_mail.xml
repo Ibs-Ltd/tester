@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.ibs.hrmioneemployee.activities.MailActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/topView"
+            android:layout_width="match_parent"
+            android:layout_height="115dp"
+            android:background="@drawable/custom_dashboard"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_marginTop="35dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/backImage"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:src="@drawable/back_white" />
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="15dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/compose"
+                android:textColor="@color/white"
+                android:textSize="23sp" />
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:id="@+id/select_file"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/gallery" />
+
+            <ImageView
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:id="@+id/send_mail"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/send" />
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/menu" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/topView">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semi_bold"
+                    android:text="From"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/sender_mail_id"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:background="@color/transparent"
+                    android:fontFamily="@font/poppins_medium"
+                    android:hint="Sender Mail Id"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:src="@drawable/down_1" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:background="#7c7c7c" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semi_bold"
+                    android:text="To"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/receiver_mail_id"
+                    android:layout_marginStart="30dp"
+                    android:layout_weight="1"
+                    android:background="@color/transparent"
+                    android:fontFamily="@font/poppins_medium"
+                    android:hint="Receiver Mail Id"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:src="@drawable/down_1" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:background="#7c7c7c" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/subject"
+                    android:layout_weight="1"
+                    android:background="@color/transparent"
+                    android:fontFamily="@font/poppins_semi_bold"
+                    android:hint="Subject"
+                    android:textColorHint="@color/black"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:background="#7c7c7c" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/message"
+                android:layout_marginTop="20dp"
+                android:background="@color/transparent"
+                android:fontFamily="@font/poppins_medium"
+                android:hint="Compose email"
+                android:lineSpacingExtra="2dp"
+                android:textColorHint="#8e8e8e"
+                android:textSize="15sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/mail_Recycler_view"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="20dp"
+                android:orientation="vertical"/>
+
+            <!--<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:visibility="visible"
+                android:gravity="center"
+                android:layout_marginTop="50dp"
+                android:id="@+id/filePathLayout"
+                android:background="#166293"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginEnd="40dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_height="wrap_content">
+&lt;!&ndash;
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:layout_marginStart="10dp"
+                        android:text="Hello"
+                        android:textColor="@color/white"
+                        android:id="@+id/file_path"/>&ndash;&gt;
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginTop="-18dp"
+                    android:gravity="end"
+                    android:layout_gravity="end">
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:id="@+id/close"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/close1"/>
+                </LinearLayout>
+            </LinearLayout>-->
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

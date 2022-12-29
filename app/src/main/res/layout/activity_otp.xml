@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.ibs.hrmioneemployee.activities.OtpActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_marginStart="-20dp"
+            android:layout_marginTop="-20dp"
+            android:src="@drawable/back_button_transperent_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <LinearLayout
+            android:id="@+id/llBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="25dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:src="@drawable/back_black" />
+
+            <!--        <TextView-->
+            <!--            android:layout_width="wrap_content"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:layout_marginStart="10dp"-->
+            <!--            android:fontFamily="@font/poppins_medium"-->
+            <!--            android:text="Back"-->
+            <!--            android:textColor="@color/black"-->
+            <!--            android:textSize="20sp" />-->
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/otpText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="OTP"
+            android:layout_marginEnd="25dp"
+            android:textColor="#166091"
+            android:textSize="28sp"
+            app:layout_constraintTop_toTopOf="@id/llBack"
+            app:layout_constraintBottom_toBottomOf="@id/llBack"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <ImageView
+            android:id="@+id/mainImage"
+            android:layout_width="300dp"
+            android:layout_height="280dp"
+            android:layout_marginTop="95dp"
+            android:src="@drawable/otp_icon_3x"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/imageView4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/otpDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="An 4 digit code has been sent to rohit@interestbudsolutions.com"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mainImage" />
+
+        <com.chaos.view.PinView
+            android:id="@+id/pinView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            style="@style/PinWidget.PinView"
+            android:inputType="number"
+            android:focusable="true"
+            app:itemSpacing="10dp"
+            app:lineWidth="1.5dp"
+            app:itemRadius="10dp"
+            android:focusableInTouchMode="true"
+            app:layout_constraintTop_toBottomOf="@id/otpDescription"
+            app:layout_constraintStart_toStartOf="@id/otpDescription"
+            app:layout_constraintEnd_toEndOf="@id/otpDescription"/>
+
+        <LinearLayout
+            android:id="@+id/llSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/button_gradient_background"
+            android:elevation="5dp"
+            android:padding="16dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pinView">
+
+            <TextView
+                android:id="@+id/submitText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/transparent"
+                android:fontFamily="@font/poppins_medium"
+                android:inputType="textEmailAddress"
+                android:text="SUBMIT"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/next_arrow" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/resendOtpLine"
+            android:layout_width="220dp"
+            android:layout_height="3dp"
+            android:layout_marginTop="55dp"
+            android:background="@drawable/custom_line"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/llSubmit" />
+
+        <TextView
+            android:id="@+id/resendOtpText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:fontFamily="@font/poppins_medium"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:text="Resend OTP"
+            android:textColor="#0a5788"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/resendOtpLine"
+            app:layout_constraintEnd_toEndOf="@+id/resendOtpLine"
+            app:layout_constraintStart_toStartOf="@+id/resendOtpLine"
+            app:layout_constraintTop_toTopOf="@+id/resendOtpLine" />
+
+        <ImageView
+            android:layout_width="78dp"
+            android:layout_height="78dp"
+            android:layout_marginStart="-10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="-5dp"
+            android:src="@drawable/left_down_icon"
+            app:layout_constraintVertical_bias="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/resendOtpLine" />
+
+        <ImageView
+            android:layout_width="78dp"
+            android:layout_height="78dp"
+            android:layout_marginEnd="-10dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintVertical_bias="1"
+            android:src="@drawable/right_down_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="com.ibs.hrmioneemployee.activities.PaySlipActivity">
+
+    <View
+        android:id="@+id/mainView"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@drawable/custom_dashboard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/llBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="25dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/backImage"
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:src="@drawable/back_white" />
+
+<!--        <TextView-->
+<!--            android:id="@+id/BackText"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:fontFamily="@font/poppins_medium"-->
+<!--            android:text="Back"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="17sp" />-->
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/filter"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:padding="5dp"
+        android:layout_marginEnd="-15dp"
+        android:src="@drawable/filter_white"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/llBack"
+        app:layout_constraintEnd_toEndOf="@id/payslipView"
+        app:layout_constraintTop_toTopOf="@id/llBack" />
+
+    <TextView
+        android:id="@+id/payslipText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:text="Payslip"
+        android:textColor="@color/white"
+        android:textSize="26sp"
+        app:layout_constraintStart_toStartOf="@+id/llBack"
+        app:layout_constraintTop_toBottomOf="@+id/llBack" />
+
+    <View
+        android:id="@+id/payslipView"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/payslip_year_background"
+        android:elevation="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/mainView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mainView" />
+
+    <View
+        android:id="@+id/payslipCircle"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="18dp"
+        android:background="@drawable/payslip_circular_bar_bg"
+        android:translationZ="90dp"
+        app:layout_constraintBottom_toBottomOf="@id/payslipView"
+        app:layout_constraintStart_toStartOf="@id/payslipView"
+        app:layout_constraintTop_toTopOf="@id/payslipView"
+        app:layout_constraintVertical_bias="0.533" />
+
+    <TextView
+        android:id="@+id/payslipYear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:text="2022"
+        android:textColor="@color/black"
+        android:textSize="19sp"
+        android:translationZ="90dp"
+        app:layout_constraintBottom_toBottomOf="@id/payslipCircle"
+        app:layout_constraintEnd_toEndOf="@id/payslipCircle"
+        app:layout_constraintStart_toStartOf="@id/payslipCircle"
+        app:layout_constraintTop_toTopOf="@id/payslipCircle" />
+
+    <TextView
+        android:id="@+id/monthYearText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:text="Jan 2022 - Dec 2022"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:translationZ="90dp"
+        app:layout_constraintBottom_toBottomOf="@id/payslipCircle"
+        app:layout_constraintEnd_toEndOf="@id/payslipView"
+        app:layout_constraintStart_toEndOf="@id/payslipCircle"
+        app:layout_constraintTop_toTopOf="@id/payslipCircle" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:overScrollMode="never"
+        android:paddingBottom="260dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/payslipView"
+        tools:listitem="@layout/payslip_recycler_single_item">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:visibility="visible"
+        android:gravity="center_vertical"
+        android:padding="15dp"
+        android:background="@drawable/mail_single_file_bg"
+        android:layout_marginTop="10dp"
+        android:id="@+id/filePathLayout"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="50dp"
+                android:textSize="18sp"
+                android:text="Hello"
+                android:textColor="@color/white"
+                android:id="@+id/file_path"/>
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="18dp"
+                android:layout_marginTop="3dp"
+                android:id="@+id/close"
+                android:layout_marginStart="-20dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_baseline_close_24"/>
+        </LinearLayout>
+        <!-- <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:gravity="end|center_vertical"
+             android:layout_gravity="end|center_vertical">
+             <ImageView
+                 android:layout_width="16dp"
+                 android:layout_height="16dp"
+                 android:id="@+id/close"
+                 android:scaleType="fitXY"
+                 android:src="@drawable/close1"/>
+         </LinearLayout>-->
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.ibs.hrmioneemployee.activities.HolidaysActivity">
+
+    <View
+        android:id="@+id/mainView"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@drawable/custom_dashboard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/llBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="25dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/backImage"
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:src="@drawable/back_white" />
+
+<!--        <TextView-->
+<!--            android:id="@+id/BackText"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:fontFamily="@font/poppins_medium"-->
+<!--            android:text="Back"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="17sp" />-->
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/filter"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:padding="5dp"
+        android:layout_marginEnd="-15dp"
+        android:src="@drawable/filter_white"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/llBack"
+        app:layout_constraintEnd_toEndOf="@id/holidaysView"
+        app:layout_constraintTop_toTopOf="@id/llBack" />
+
+    <TextView
+        android:id="@+id/holidaysText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:text="Holidays"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="@+id/llBack"
+        app:layout_constraintTop_toBottomOf="@+id/llBack" />
+
+    <View
+        android:id="@+id/holidaysView"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/payslip_year_background"
+        android:elevation="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/mainView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mainView" />
+
+    <View
+        android:id="@+id/holidayCircle"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="18dp"
+        android:background="@drawable/payslip_circular_bar_bg"
+        android:translationZ="90dp"
+        app:layout_constraintBottom_toBottomOf="@id/holidaysView"
+        app:layout_constraintStart_toStartOf="@id/holidaysView"
+        app:layout_constraintTop_toTopOf="@id/holidaysView"
+        app:layout_constraintVertical_bias="0.533" />
+
+    <TextView
+        android:id="@+id/holidayYear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:text="2022"
+        android:textColor="@color/black"
+        android:textSize="19sp"
+        android:translationZ="90dp"
+        app:layout_constraintBottom_toBottomOf="@id/holidayCircle"
+        app:layout_constraintEnd_toEndOf="@id/holidayCircle"
+        app:layout_constraintStart_toStartOf="@id/holidayCircle"
+        app:layout_constraintTop_toTopOf="@id/holidayCircle" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:text="Holidays"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        android:translationZ="90dp"
+        app:layout_constraintBottom_toBottomOf="@id/holidayCircle"
+        app:layout_constraintEnd_toEndOf="@id/holidaysView"
+        app:layout_constraintStart_toEndOf="@id/holidayCircle"
+        app:layout_constraintTop_toTopOf="@id/holidayCircle" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="250dp"
+        android:scrollbarThumbVertical="@null"
+        android:overScrollMode="never"
+        app:layout_constraintTop_toBottomOf="@id/holidaysView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:id="@+id/mainLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:paddingBottom="20dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/llJanuary"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="5dp"
+                android:background="@drawable/holiday_list_animation_background"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/januaryText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="January"
+                    android:textSize="15sp"
+                    android:layout_weight="1"
+                    android:textColor="@color/holiday_list_text_color"
+                    android:fontFamily="@font/poppins_medium"/>
+
+                <ImageView
+                    android:id="@+id/januaryArrow"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:backgroundTint="@color/black"
+                    android:background="@drawable/arrow_down"/>
+            </LinearLayout>
+
+            <include layout="@layout/recycler_view_for_holiday"
+                android:id="@+id/januaryRecyclerView"/>
+
+            <include layout="@layout/no_holiday_layout"
+                android:id="@+id/janNoHoliday"/>
+
+
+            <LinearLayout
+                android:id="@+id/llFebruary"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="5dp"
+                android:background="@drawable/holiday_list_animation_background"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/februaryText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="February"
+                    android:textSize="15sp"
+                    android:layout_weight="1"
+                    android:textColor="@color/holiday_list_text_color"
+                    android:fontFamily="@font/poppins_medium"/>
+
+                <ImageView
+                    android:id="@+id/februaryArrow"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:backgroundTint="@color/black"
+                    android:background="@drawable/arrow_down"/>
+
+            </LinearLayout>
+
+            <include layout="@layout/recycler_view_for_holiday"
+                android:id="@+id/februaryRecyclerView"/>
+
+            <include layout="@layout/no_holiday_layout"
+                android:id="@+id/febNoHoliday"/>
+
+            <LinearLayout
+                android:id="@+id/llMarch"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="5dp"
+                android:background="@drawable/holiday_list_animation_background"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/marchText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="March"
+                    android:textSize="15sp"
+                    android:layout_weight="1"
+                    android:textColor="@color/holiday_list_text_color"
+                    android:fontFamily="@font/poppins_medium"/>
+
+                <ImageView
+                    android:id="@+id/marchArrow"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:backgroundTint="@color/black"
+                    android:background="@drawable/arrow_down"/>
+
+            </LinearLayout>
+
+            <include layout="@layout/recycler_view_for_holiday"
+                android:id="@+id/marchRecyclerView"/>
+
+            <include layout="@layout/no_holiday_layout"
+                android:id="@+id/marchNoHoliday"/>
+
+            <LinearLayout
+                android:id="@+id/llApril"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="5dp"
+                android:background="@drawable/holiday_list_animation_background"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/aprilText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="April"
+                    android:textSize="15sp"
+                    android:layout_weight="1"
+                    android:textColor="@color/holiday_list_text_color"
+                    android:fontFamily="@font/poppins_medium"/>
+
+                <ImageView
+                    android:id="@+id/aprilArrow"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:backgroundTint="@color/black"
+                    android:background="@drawable/arrow_down"/>
+
+            </LinearLayout>
+
+            <include layout="@layout/recycler_view_for_holiday"
+                android:id="@+id/aprilRecyclerView"/>
+
+            <include layout="@layout/no_holiday_layout"
+                android:id="@+id/aprilNoHoliday"/>
+
+            <LinearLayout
+                android:id="@+id/llMay"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="5dp"
+                android:background="@drawable/holiday_list_animation_background"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/mayText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="May"
+                    android:textSize="15sp"
+                    android:layout_weight="1"
+                    android:textColor="@color/holiday_list_text_color"
+                    android:fontFamily="@font/poppins_medium"/>
+
+                <ImageView
+                    android:id="@+id/mayArrow"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:backgroundTint="@color/black"
+                    android:background="@drawable/arrow_down"/>
+
+            </LinearLayout>
+
+            <include layout="@layout/recycler_view_for_holiday"
+                android:id="@+id/mayRecyclerView"/>
+
+            <include layout="@layout/no_holiday_layout"
+                android:id="@+id/mayNoHoliday"/>
+
+            <LinearLayout
+                android:id="@+id/llJune"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="5dp"
+                android:background="@drawable/holiday_list_animation_background"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/juneText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="June"
+                    android:textSize="15sp"
+                    android:layout_weight="1"
+                    android:textColor="@color/holiday_list_text_color"
+                    android:fontFamily="@font/poppins_medium"/>
+
+                <ImageView
+                    android:id="@+id/juneArrow"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:backgroundTint="@color/black"
+                    android:background="@drawable/arrow_down"/>
+
+            </LinearLayout>
+
+            <include layout="@layout/recycler_view_for_holiday"
+                android:id="@+id/juneRecyclerView"/>
+
+            <include layout="@layout/no_holiday_layout"
+                android:id="@+id/juneNoHoliday"/>
+
+            <LinearLayout
+                android:id="@+id/llJuly"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="5dp"
+                android:background="@drawable/holiday_list_animation_background"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/julyText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="July"
+                    android:textSize="15sp"
+                    android:layout_weight="1"
+                    android:textColor="@color/holiday_list_text_color"
+                    android:fontFamily="@font/poppins_medium"/>
+
+                <ImageView
+                    android:id="@+id/julyArrow"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:backgroundTint="@color/black"
+                    android:background="@drawable/arrow_down"/>
+
+            </LinearLayout>
+
+            <include layout="@layout/recycler_view_for_holiday"
+                android:id="@+id/julyRecyclerView"/>
+
+            <include layout="@layout/no_holiday_layout"
+                android:id="@+id/julyNoHoliday"/>
+
+            <LinearLayout
+                android:id="@+id/llAugust"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="5dp"
+                android:background="@drawable/holiday_list_animation_background"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/augustText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="August"
+                    android:textSize="15sp"
+                    android:layout_weight="1"
+                    android:textColor="@color/holiday_list_text_color"
+                    android:fontFamily="@font/poppins_medium"/>
+
+                <ImageView
+                    android:id="@+id/augustArrow"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:backgroundTint="@color/black"
+                    android:background="@drawable/arrow_down"/>
+
+            </LinearLayout>
+
+            <include layout="@layout/recycler_view_for_holiday"
+                android:id="@+id/augustRecyclerView"/>
+
+            <include layout="@layout/no_holiday_layout"
+                android:id="@+id/augustNoHoliday"/>
+
+            <LinearLayout
+                android:id="@+id/llSeptember"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="5dp"
+                android:background="@drawable/holiday_list_animation_background"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/septemberText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="September"
+                    android:textSize="15sp"
+                    android:layout_weight="1"
+                    android:textColor="@color/holiday_list_text_color"
+                    android:fontFamily="@font/poppins_medium"/>
+
+                <ImageView
+                    android:id="@+id/septemberArrow"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:backgroundTint="@color/black"
+                    android:background="@drawable/arrow_down"/>
+
+            </LinearLayout>
+
+            <include layout="@layout/recycler_view_for_holiday"
+                android:id="@+id/septemberRecyclerView"/>
+
+            <include layout="@layout/no_holiday_layout"
+                android:id="@+id/sepNoHoliday"/>
+
+            <LinearLayout
+                android:id="@+id/llOctober"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="5dp"
+                android:background="@drawable/holiday_list_animation_background"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/octoberText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="October"
+                    android:textSize="15sp"
+                    android:layout_weight="1"
+                    android:textColor="@color/holiday_list_text_color"
+                    android:fontFamily="@font/poppins_medium"/>
+
+                <ImageView
+                    android:id="@+id/octoberArrow"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:backgroundTint="@color/black"
+                    android:background="@drawable/arrow_down"/>
+
+            </LinearLayout>
+
+            <include layout="@layout/recycler_view_for_holiday"
+                android:id="@+id/octoberRecyclerView"/>
+
+            <include layout="@layout/no_holiday_layout"
+                android:id="@+id/octNoHoliday"/>
+
+            <LinearLayout
+                android:id="@+id/llNovember"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="5dp"
+                android:background="@drawable/holiday_list_animation_background"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/novemberText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="November"
+                    android:textSize="15sp"
+                    android:layout_weight="1"
+                    android:textColor="@color/holiday_list_text_color"
+                    android:fontFamily="@font/poppins_medium"/>
+
+                <ImageView
+                    android:id="@+id/novemberArrow"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:backgroundTint="@color/black"
+                    android:background="@drawable/arrow_down"/>
+
+            </LinearLayout>
+
+            <include layout="@layout/recycler_view_for_holiday"
+                android:id="@+id/novemberRecyclerView"/>
+
+            <include layout="@layout/no_holiday_layout"
+                android:id="@+id/novNoHoliday"/>
+
+            <LinearLayout
+                android:id="@+id/llDecember"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="5dp"
+                android:background="@drawable/holiday_list_animation_background"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/decemberText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="December"
+                    android:textSize="15sp"
+                    android:layout_weight="1"
+                    android:textColor="@color/holiday_list_text_color"
+                    android:fontFamily="@font/poppins_medium"/>
+
+                <ImageView
+                    android:id="@+id/decemberArrow"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:backgroundTint="@color/black"
+                    android:background="@drawable/arrow_down"/>
+
+            </LinearLayout>
+
+            <include layout="@layout/recycler_view_for_holiday"
+                android:id="@+id/decemberRecyclerView"/>
+
+            <include layout="@layout/no_holiday_layout"
+                android:id="@+id/decNoHoliday"/>
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

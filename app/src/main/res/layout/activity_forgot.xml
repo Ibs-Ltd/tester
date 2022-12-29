@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context="com.ibs.hrmioneemployee.activities.GenerateOtpForResetPasswordActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_marginStart="-20dp"
+            android:layout_marginTop="-20dp"
+            android:src="@drawable/back_button_transperent_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <LinearLayout
+            android:id="@+id/llBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="25dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:src="@drawable/back_black" />
+
+            <!--        <TextView-->
+            <!--            android:layout_width="wrap_content"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:layout_marginStart="10dp"-->
+            <!--            android:fontFamily="@font/poppins_medium"-->
+            <!--            android:text="Back"-->
+            <!--            android:textColor="@color/black"-->
+            <!--            android:textSize="20sp" />-->
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Forgot"
+            android:layout_marginEnd="25dp"
+            android:textColor="#166091"
+            android:textSize="27sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/llBack"
+            app:layout_constraintBottom_toBottomOf="@id/llBack"/>
+
+        <ImageView
+            android:id="@+id/mainImage"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_marginTop="95dp"
+            android:src="@drawable/forgot_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/imageView4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/otpDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:textSize="13sp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Don't worry! It happens. Please enter the address associated with your account."
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mainImage" />
+
+        <LinearLayout
+            android:id="@+id/llEmailId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/custom_edittext"
+            android:elevation="5dp"
+            android:padding="16dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/otpDescription">
+
+            <EditText
+                android:id="@+id/etEmailId"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/transparent"
+                android:fontFamily="@font/poppins_medium"
+                android:hint="Official Email id"
+                android:inputType="textEmailAddress"
+                android:textSize="13sp" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/email" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/button_gradient_background"
+            android:elevation="5dp"
+            android:padding="16dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.504"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/llEmailId">
+
+            <TextView
+                android:id="@+id/submitText"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/transparent"
+                android:fontFamily="@font/poppins_medium"
+                android:inputType="textEmailAddress"
+                android:text="SUBMIT"
+                android:gravity="center_vertical"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/next_arrow" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/backToLoginLine"
+            android:layout_width="250dp"
+            android:layout_height="3dp"
+            android:layout_marginTop="55dp"
+            android:background="@drawable/custom_line"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/llSubmit" />
+
+        <TextView
+            android:id="@+id/backToLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:text="Back To Login"
+            android:textColor="#0a5788"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/backToLoginLine"
+            app:layout_constraintEnd_toEndOf="@+id/backToLoginLine"
+            app:layout_constraintStart_toStartOf="@+id/backToLoginLine"
+            app:layout_constraintTop_toTopOf="@+id/backToLoginLine"/>
+
+        <ImageView
+            android:layout_width="78dp"
+            android:layout_height="78dp"
+            android:layout_marginStart="-10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="-5dp"
+            android:src="@drawable/left_down_icon"
+            app:layout_constraintVertical_bias="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/backToLoginLine"/>
+
+        <ImageView
+            android:layout_width="78dp"
+            android:layout_height="78dp"
+            android:layout_marginEnd="-10dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/right_down_icon"
+            app:layout_constraintVertical_bias="1"
+            app:layout_constraintTop_toBottomOf="@id/backToLoginLine"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
